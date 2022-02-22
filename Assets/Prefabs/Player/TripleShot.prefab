@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3938656487741522667}
   m_Layer: 0
-  m_Name: Triple_Shot
+  m_Name: TripleShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
