@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
@@ -26,10 +27,11 @@ public class Player : MonoBehaviour
     private GameObject[] engines;
     [SerializeField]
     private AudioClip laserAudioClip;
+    [SerializeField]
+    private UnityEvent deathEvent;
 
     private AudioSource audioSource;
 
-    private SpawnManager spawnManager;
     private UiManager uiManager;
 
     private float nextAllowedFire = 0.0f;
@@ -62,7 +64,6 @@ public class Player : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = laserAudioClip;
 
-        spawnManager = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
         uiManager = GameObject.Find("Canvas").GetComponent<UiManager>();
     }
 
@@ -141,8 +142,7 @@ public class Player : MonoBehaviour
 
             if (lives <= 0)
             {
-                spawnManager.StopSpawning();
-                uiManager.EndGame();
+                deathEvent.Invoke();
                 Destroy(this.gameObject);
             } else
             {
