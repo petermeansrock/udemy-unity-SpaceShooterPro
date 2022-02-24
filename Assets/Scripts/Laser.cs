@@ -9,6 +9,8 @@ public class Laser : MonoBehaviour
 
     private float maxY = 8.0f;
 
+    public const string TAG = "Laser";
+
     // Update is called once per frame
     void Update()
     {
@@ -33,6 +35,17 @@ public class Laser : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        switch (other.tag)
+        {
+            case Enemy.TAG:
+            case Asteroid.TAG:
+                Destroy(gameObject);
+                break;
         }
     }
 }

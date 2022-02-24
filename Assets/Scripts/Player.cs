@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
     private Coroutine previousTripleshotCoroutine;
     private Coroutine previousSpeedCoroutine;
 
+    public const string TAG = "Player";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -129,7 +131,7 @@ public class Player : MonoBehaviour
         #endif
     }
 
-    public void Damage()
+    private void Damage()
     {
         if (shield.activeSelf)
         {
@@ -151,7 +153,38 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void EnableTripleShot()
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        switch (other.tag)
+        {
+            case Enemy.TAG:
+                Damage();
+                break;
+            case Powerup.TAG:
+                var powerup = other.GetComponent<Powerup>();
+                ApplyPowerup(powerup.Type);
+                break;
+        }
+    }
+
+    private void ApplyPowerup(PowerupType powerupType)
+    {
+        switch (powerupType)
+        {
+            case PowerupType.TripleShot:
+                EnableTripleShot();
+                break;
+            case PowerupType.Speed:
+                EnableSpeedBoost();
+                break;
+            case PowerupType.Shield:
+                EnableShield();
+                break;
+        }
+
+    }
+
+    private void EnableTripleShot()
     {
         if (previousTripleshotCoroutine != null)
         {
@@ -161,7 +194,7 @@ public class Player : MonoBehaviour
         previousTripleshotCoroutine = StartCoroutine(PowerDownRoutine(() => isTripleShotActive = false));
     }
 
-    public void EnableSpeedBoost()
+    private void EnableSpeedBoost()
     {
         if (previousSpeedCoroutine != null)
         {
@@ -171,7 +204,7 @@ public class Player : MonoBehaviour
         previousSpeedCoroutine = StartCoroutine(PowerDownRoutine(() => speedBoostFactor = 1.0f));
     }
 
-    public void EnableShield()
+    private void EnableShield()
     {
         shield.SetActive(true);
     }

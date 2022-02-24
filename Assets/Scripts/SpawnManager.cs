@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class SpawnManager : MonoBehaviour
     private GameObject enemyPrefab;
     [SerializeField]
     private GameObject[] powerUpPrefabs;
+    [SerializeField]
+    private UnityEvent<int> enemyReportedScoreEvent;
 
     private bool stopSpawning = false;
 
@@ -29,7 +32,12 @@ public class SpawnManager : MonoBehaviour
         {
             // Spawn at a random x position
             float x = Random.Range(minX, maxX);
+
+            // Wire up events between enemy and configured event receiver
             GameObject enemy = Instantiate(enemyPrefab, new Vector3(x, maxY, 0), Quaternion.identity);
+            enemy.GetComponent<Enemy>().destroyedByLaserEvent.AddListener(
+                score => enemyReportedScoreEvent.Invoke(score)
+            );
 
             // Group enemies under the spawn manager
             enemy.transform.parent = gameObject.transform;

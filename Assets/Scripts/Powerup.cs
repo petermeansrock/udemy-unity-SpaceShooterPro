@@ -8,10 +8,13 @@ public class Powerup : MonoBehaviour
     private float speed = 3.0f;
     [SerializeField]
     private PowerupType type;
+    public PowerupType Type => type;
     [SerializeField]
     private AudioClip collectedAudioClip;
 
     private float minY = -5.7f;
+
+    public const string TAG = "Powerup";
 
     // Update is called once per frame
     void Update()
@@ -27,38 +30,13 @@ public class Powerup : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Only ever consider player collisions
-        if (!other.CompareTag("Player"))
+        if (!other.CompareTag(Player.TAG))
         {
             return;
         }
 
-        // Apply power-up and destroy object
-        var player = other.GetComponent<Player>();
-        if (player != null)
-        {
-            Debug.Log(type + " powerup collected!");
-            switch (type)
-            {
-                case PowerupType.TripleShot:
-                    player.EnableTripleShot();
-                    break;
-                case PowerupType.Speed:
-                    player.EnableSpeedBoost();
-                    break;
-                case PowerupType.Shield:
-                    player.EnableShield();
-                    break;
-            }
-        }
-
+        // Play pick-up sound and destroy object
         AudioSource.PlayClipAtPoint(collectedAudioClip, transform.position);
         Destroy(gameObject);
-    }
-
-    enum PowerupType
-    {
-        TripleShot,
-        Speed,
-        Shield,
     }
 }
