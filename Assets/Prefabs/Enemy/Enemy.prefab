@@ -51,6 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   explosionAudioClip: {fileID: 8300000, guid: a885c043fab7e46438bba03ba9dab6bc, type: 3}
+  destroyedByLaserEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &5738935044905097677
 SpriteRenderer:
   m_ObjectHideFlags: 0

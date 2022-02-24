@@ -10,10 +10,14 @@ public class Asteroid : MonoBehaviour
     private GameObject explosionPrefab;
 
     private SpawnManager spawnManager;
+    private Collider2D myCollider;
+
+    public const string TAG = "Asteroid";
 
     void Start()
     {
         spawnManager = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
+        myCollider = GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
@@ -24,10 +28,10 @@ public class Asteroid : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Laser")
+        if (other.CompareTag(Laser.TAG))
         {
+            myCollider.enabled = false;
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(other.gameObject);
             spawnManager.StartSpawning();
             Destroy(gameObject, 0.15f);
         }
