@@ -817,11 +817,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 9529ecc3d479da5499993355e6c2cb4f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 9529ecc3d479da5499993355e6c2cb4f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 9529ecc3d479da5499993355e6c2cb4f, type: 3}
       propertyPath: Name
@@ -1784,6 +1784,9 @@ GameObject:
   - component: {fileID: 2041227468}
   - component: {fileID: 2041227467}
   - component: {fileID: 2041227466}
+  - component: {fileID: 2041227472}
+  - component: {fileID: 2041227473}
+  - component: {fileID: 2041227471}
   - component: {fileID: 2041227469}
   - component: {fileID: 2041227470}
   m_Layer: 0
@@ -1805,18 +1808,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b10e9cf289a49a8b3831e6ec61741a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   lives: 3
-  laserPrefab: {fileID: 2345892709034903470, guid: ff5b8981eab5941c1824eed42d2d264c, type: 3}
-  tripleShotPrefab: {fileID: 5372129413115251506, guid: 7f2b28b191e244aeabac1d6e7ced3569, type: 3}
   shield: {fileID: 752526239}
-  fireRate: 0.15
   powerupPeriod: 5
   score: 0
   engines:
   - {fileID: 1380210083}
   - {fileID: 1726498796}
-  laserAudioClip: {fileID: 8300000, guid: 75676f361bdfeaf41a46623e95df3dbc, type: 3}
   deathEvent:
     m_PersistentCalls:
       m_Calls:
@@ -2049,6 +2047,91 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2041227471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041227465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558f89bc988cf4e2a987ffb09622a5ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+--- !u!114 &2041227472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041227465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a4e61c791334422b93b565ee120c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserPrefab: {fileID: 2345892709034903470, guid: ff5b8981eab5941c1824eed42d2d264c, type: 3}
+  tripleShotPrefab: {fileID: 5372129413115251506, guid: 7f2b28b191e244aeabac1d6e7ced3569, type: 3}
+  fireRate: 0.15
+  laserAudioClip: {fileID: 8300000, guid: 75676f361bdfeaf41a46623e95df3dbc, type: 3}
+--- !u!114 &2041227473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041227465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d913077393da04f9bb8a6e24d5a810aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 3
+  shield: {fileID: 752526239}
+  engines:
+  - {fileID: 1380210083}
+  - {fileID: 1726498796}
+  deathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1375580763}
+        m_TargetAssemblyTypeName: SpawnManager, Assembly-CSharp
+        m_MethodName: StopSpawning
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1531025484}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: EndGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 349488856}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: EndGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2058635101
 GameObject:
   m_ObjectHideFlags: 0

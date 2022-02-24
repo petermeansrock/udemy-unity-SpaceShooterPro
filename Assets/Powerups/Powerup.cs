@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class Powerup : MonoBehaviour
     private float minY = -5.7f;
 
     public const string TAG = "Powerup";
+    private const float POWERUP_PERIOD = 5.0f;
 
     // Update is called once per frame
     void Update()
@@ -38,5 +40,11 @@ public class Powerup : MonoBehaviour
         // Play pick-up sound and destroy object
         AudioSource.PlayClipAtPoint(collectedAudioClip, transform.position);
         Destroy(gameObject);
+    }
+
+    public static IEnumerator PowerDownRoutine(Action action)
+    {
+        yield return new WaitForSeconds(POWERUP_PERIOD);
+        action.Invoke();
     }
 }
