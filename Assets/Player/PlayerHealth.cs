@@ -49,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
         {
             shield.SetActive(false);
         }
-        else
+        else if (lives > 0)
         {
             lives--;
             livesUpdatedEvent.Invoke(lives);
