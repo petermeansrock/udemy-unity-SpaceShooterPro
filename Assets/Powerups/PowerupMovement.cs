@@ -7,7 +7,7 @@ public class PowerupMovement : MonoBehaviour
 
     private float minY = -5.7f;
 
-    void Update()
+    private void Update()
     {
         // Move down at a specific speed and despawn at bottom of screen
         transform.Translate(speed * Time.deltaTime * Vector3.down);

@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
         health = GetComponent<EnemyHealth>();
     }
 
-    void Update()
+    private void Update()
     {
         // Move down
         transform.Translate(speed * Time.deltaTime * Vector3.down);

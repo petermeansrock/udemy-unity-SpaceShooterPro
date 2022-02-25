@@ -9,7 +9,7 @@ public class PlayerScore : MonoBehaviour
 
     public const string TAG = "Player";
 
-    void Start()
+    private void Start()
     {
         uiManager = GameObject.Find("Canvas").GetComponent<UiManager>();
     }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Laser : MonoBehaviour
@@ -11,19 +9,18 @@ public class Laser : MonoBehaviour
 
     public const string TAG = "Laser";
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         CalculateMovement();
     }
 
-    void CalculateMovement()
+    private void CalculateMovement()
     {
         transform.Translate(speed * Time.deltaTime * Vector3.up);
         ConditionallyDespawn();
     }
 
-    void ConditionallyDespawn()
+    private void ConditionallyDespawn()
     {
         if (transform.position.y > maxY)
         {

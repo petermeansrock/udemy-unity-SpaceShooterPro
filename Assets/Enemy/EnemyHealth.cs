@@ -15,8 +15,7 @@ public class EnemyHealth : MonoBehaviour
     private bool isAlive = true;
     public bool IsAlive => isAlive;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
@@ -38,7 +37,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    void DestroySelf()
+    private void DestroySelf()
     {
         isAlive = false;
         boxCollider.enabled = false;

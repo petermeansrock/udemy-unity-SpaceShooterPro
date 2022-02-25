@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +6,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private bool isGameOver;
 
-    void Update()
+    private void Update()
     {
         if (isGameOver && Input.GetKeyDown(KeyCode.R))
         {
@@ -21,7 +19,7 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
     }
 
-    void RestartGame()
+    private void RestartGame()
     {
         isGameOver = false;
         SceneManager.LoadScene("Game");

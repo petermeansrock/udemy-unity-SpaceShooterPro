@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -24,7 +23,7 @@ public class SpawnManager : MonoBehaviour
     private float maxPowerupDelay = 7.0f;
     private float minPowerupDelay = 3.0f;
 
-    IEnumerator SpawnEnemyRoutine()
+    private IEnumerator SpawnEnemyRoutine()
     {
         yield return new WaitForSeconds(3.0f);
 
@@ -48,7 +47,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnPowerupRoutine()
+    private IEnumerator SpawnPowerupRoutine()
     {
         yield return new WaitForSeconds(3.0f);
 

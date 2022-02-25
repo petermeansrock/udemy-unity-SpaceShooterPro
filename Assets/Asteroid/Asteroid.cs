@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Asteroid : MonoBehaviour
@@ -14,19 +12,18 @@ public class Asteroid : MonoBehaviour
 
     public const string TAG = "Asteroid";
 
-    void Start()
+    private void Start()
     {
         spawnManager = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
         myCollider = GetComponent<CircleCollider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         transform.Rotate(rotationSpeed * Time.deltaTime * Vector3.forward);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(Laser.TAG))
         {
