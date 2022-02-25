@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Powerup
 {
-    public const string TAG = "Powerup";
     private const float POWERUP_PERIOD = 5.0f;
 
     public static IEnumerator PowerDownRoutine(Action action)

@@ -12,8 +12,6 @@ public class Asteroid : MonoBehaviour
 
     private Collider2D myCollider;
 
-    public const string TAG = "Asteroid";
-
     private void Start()
     {
         myCollider = GetComponent<CircleCollider2D>();
@@ -26,7 +24,7 @@ public class Asteroid : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(Laser.TAG))
+        if (other.CompareTag(Tag.Laser))
         {
             myCollider.enabled = false;
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);

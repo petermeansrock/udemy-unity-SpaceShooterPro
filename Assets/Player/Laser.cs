@@ -7,8 +7,6 @@ public class Laser : MonoBehaviour
 
     private float maxY = 8.0f;
 
-    public const string TAG = "Laser";
-
     private void Update()
     {
         CalculateMovement();
@@ -39,8 +37,8 @@ public class Laser : MonoBehaviour
     {
         switch (other.tag)
         {
-            case Enemy.TAG:
-            case Asteroid.TAG:
+            case Tag.Enemy:
+            case Tag.Asteroid:
                 Destroy(gameObject);
                 break;
         }

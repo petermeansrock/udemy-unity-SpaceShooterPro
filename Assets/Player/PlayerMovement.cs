@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(Powerup.TAG))
+        if (other.CompareTag(Tag.Powerup))
         {
             var powerup = other.GetComponent<PowerupCollected>();
             if (powerup.Type == PowerupType.Speed)

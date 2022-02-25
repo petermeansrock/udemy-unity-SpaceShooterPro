@@ -27,10 +27,10 @@ public class EnemyHealth : MonoBehaviour
     {
         switch (other.tag)
         {
-            case Player.TAG:
+            case Tag.Player:
                 DestroySelf();
                 break;
-            case Laser.TAG:
+            case Tag.Laser:
                 destroyedByLaserEvent.Invoke(10);
                 DestroySelf();
                 break;

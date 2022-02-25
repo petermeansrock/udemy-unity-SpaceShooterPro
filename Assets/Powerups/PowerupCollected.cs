@@ -11,7 +11,7 @@ public class PowerupCollected : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Only ever consider player collisions
-        if (!other.CompareTag(Player.TAG))
+        if (!other.CompareTag(Tag.Player))
         {
             return;
         }

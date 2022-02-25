@@ -30,10 +30,10 @@ public class PlayerHealth : MonoBehaviour
     {
         switch (other.tag)
         {
-            case Enemy.TAG:
+            case Tag.Enemy:
                 Damage();
                 break;
-            case Powerup.TAG:
+            case Tag.Powerup:
                 var powerup = other.GetComponent<PowerupCollected>();
                 if (powerup.Type == PowerupType.Shield)
                 {
