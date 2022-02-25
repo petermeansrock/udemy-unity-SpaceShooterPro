@@ -57,7 +57,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (other.CompareTag(Powerup.TAG))
         {
-            var powerup = other.GetComponent<Powerup>();
+            var powerup = other.GetComponent<PowerupCollected>();
             if (powerup.Type == PowerupType.TripleShot)
             {
                 EnableTripleShot();

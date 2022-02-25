@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 7735725899315406933}
   - component: {fileID: 5137898365009190169}
   - component: {fileID: 7459105565875528984}
-  - component: {fileID: 5808849710503929623}
   - component: {fileID: 8800686652266317036}
+  - component: {fileID: 8286983663816364138}
+  - component: {fileID: 315658151587483764}
   m_Layer: 0
   m_Name: SpeedPowerup
   m_TagString: Powerup
@@ -125,21 +126,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5808849710503929623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3068279347205884460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a972dadb008647cd806b3af28f92322, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  type: 1
-  collectedAudioClip: {fileID: 8300000, guid: 5ee343246919d2b4bba63ae629e95494, type: 3}
 --- !u!95 &8800686652266317036
 Animator:
   serializedVersion: 4
@@ -160,3 +146,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8286983663816364138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3068279347205884460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c66c74710f74f49b4b2d48ab0269d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  collectedAudioClip: {fileID: 8300000, guid: 5ee343246919d2b4bba63ae629e95494, type: 3}
+--- !u!114 &315658151587483764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3068279347205884460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f486479df2f2942c1895b8cac782b358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3

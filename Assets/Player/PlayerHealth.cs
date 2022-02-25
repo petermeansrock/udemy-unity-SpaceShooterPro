@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
                 Damage();
                 break;
             case Powerup.TAG:
-                var powerup = other.GetComponent<Powerup>();
+                var powerup = other.GetComponent<PowerupCollected>();
                 if (powerup.Type == PowerupType.Shield)
                 {
                     EnableShield();
