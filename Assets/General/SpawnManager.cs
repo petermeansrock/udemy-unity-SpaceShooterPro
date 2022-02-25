@@ -35,7 +35,7 @@ public class SpawnManager : MonoBehaviour
 
             // Wire up events between enemy and configured event receiver
             GameObject enemy = Instantiate(enemyPrefab, new Vector3(x, maxY, 0), Quaternion.identity);
-            enemy.GetComponent<Enemy>().destroyedByLaserEvent.AddListener(
+            enemy.GetComponent<EnemyHealth>().destroyedByLaserEvent.AddListener(
                 score => enemyReportedScoreEvent.Invoke(score)
             );
 

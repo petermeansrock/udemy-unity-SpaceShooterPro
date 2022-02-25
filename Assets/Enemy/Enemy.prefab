@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7068910742062358868}
-  - component: {fileID: -201586057375535329}
+  - component: {fileID: 8952688823065988089}
+  - component: {fileID: 5069984271570518238}
   - component: {fileID: 5738935044905097677}
   - component: {fileID: 8038917459847737266}
   - component: {fileID: 124353286631064466}
@@ -37,7 +38,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-201586057375535329
+--- !u!114 &8952688823065988089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,14 +47,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 3660273019694347840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86b58b5a1e37e45dba2da59779cd31c2, type: 3}
+  m_Script: {fileID: 11500000, guid: e00d7ee28a8894b079ad1e7d9be2b16e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
   explosionAudioClip: {fileID: 8300000, guid: a885c043fab7e46438bba03ba9dab6bc, type: 3}
   destroyedByLaserEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5069984271570518238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3660273019694347840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865c2ce361b4f4428bd26531c43157e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
 --- !u!212 &5738935044905097677
 SpriteRenderer:
   m_ObjectHideFlags: 0
