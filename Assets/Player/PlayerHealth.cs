@@ -11,8 +11,8 @@ public class PlayerHealth : MonoBehaviour
     private GameObject[] engines;
     [SerializeField]
     private UnityEvent deathEvent;
-
-    private UiManager uiManager;
+    [SerializeField]
+    private UnityEvent<int> livesUpdatedEvent;
 
     private void Start()
     {
@@ -24,8 +24,6 @@ public class PlayerHealth : MonoBehaviour
             engines[i] = engines[j];
             engines[j] = temp;
         }
-
-        uiManager = GameObject.Find("Canvas").GetComponent<UiManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -54,7 +52,7 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             lives--;
-            uiManager.UpdateLives(lives);
+            livesUpdatedEvent.Invoke(lives);
 
             if (lives <= 0)
             {
