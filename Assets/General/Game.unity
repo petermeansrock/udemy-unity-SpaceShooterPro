@@ -2173,6 +2173,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1034628804137854763, guid: 97efad936bf9c4a3d9bc9fa550d9ed22, type: 3}
+      propertyPath: destroyedEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1034628804137854763, guid: 97efad936bf9c4a3d9bc9fa550d9ed22, type: 3}
+      propertyPath: destroyedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1034628804137854763, guid: 97efad936bf9c4a3d9bc9fa550d9ed22, type: 3}
+      propertyPath: destroyedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1375580763}
+    - target: {fileID: -1034628804137854763, guid: 97efad936bf9c4a3d9bc9fa550d9ed22, type: 3}
+      propertyPath: destroyedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1034628804137854763, guid: 97efad936bf9c4a3d9bc9fa550d9ed22, type: 3}
+      propertyPath: destroyedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartSpawning
+      objectReference: {fileID: 0}
+    - target: {fileID: -1034628804137854763, guid: 97efad936bf9c4a3d9bc9fa550d9ed22, type: 3}
+      propertyPath: destroyedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SpawnManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -1034628804137854763, guid: 97efad936bf9c4a3d9bc9fa550d9ed22, type: 3}
+      propertyPath: destroyedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 670863765759943279, guid: 97efad936bf9c4a3d9bc9fa550d9ed22, type: 3}
       propertyPath: m_RootOrder
       value: 8

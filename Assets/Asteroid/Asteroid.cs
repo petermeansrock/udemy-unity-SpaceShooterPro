@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Asteroid : MonoBehaviour
 {
@@ -6,15 +7,15 @@ public class Asteroid : MonoBehaviour
     private float rotationSpeed = 15.0f;
     [SerializeField]
     private GameObject explosionPrefab;
+    [SerializeField]
+    private UnityEvent destroyedEvent;
 
-    private SpawnManager spawnManager;
     private Collider2D myCollider;
 
     public const string TAG = "Asteroid";
 
     private void Start()
     {
-        spawnManager = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
         myCollider = GetComponent<CircleCollider2D>();
     }
 
@@ -29,7 +30,7 @@ public class Asteroid : MonoBehaviour
         {
             myCollider.enabled = false;
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            spawnManager.StartSpawning();
+            destroyedEvent.Invoke();
             Destroy(gameObject, 0.15f);
         }
     }
