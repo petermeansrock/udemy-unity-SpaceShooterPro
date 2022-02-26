@@ -5,7 +5,6 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
     private AudioClip explosionAudioClip;
-    [SerializeField]
     public UnityEvent<int> destroyedByLaserEvent;
 
     private Animator animator;
