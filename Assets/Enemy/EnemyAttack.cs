@@ -27,7 +27,7 @@ public class EnemyAttack : MonoBehaviour
         while (health.IsAlive)
         {
             yield return new WaitForSeconds(Random.Range(minFireDelay, maxFireDelay));
-            var laserPosition = transform.position + new Vector3(0.0f, -1.3f, 0.0f);
+            var laserPosition = transform.position;
             Instantiate(laserPrefab, laserPosition, Quaternion.identity);
             audioSource.PlayOneShot(laserAudioClip);
         }
