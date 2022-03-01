@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/General/SinglePlayerMode.unity
     guid: fe540b5600d354d3f8756680521f8ec8
+  - enabled: 1
+    path: Assets/General/CoOpMode.unity
+    guid: 50e96057405a74f58b49e4978fdedd56
   m_configObjects: {}
