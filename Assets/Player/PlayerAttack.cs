@@ -21,7 +21,6 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.clip = laserAudioClip;
     }
 
     private void Update()
@@ -40,7 +39,7 @@ public class PlayerAttack : MonoBehaviour
             Instantiate(prefab, laserPosition, Quaternion.identity);
 
             // Play laser sound
-            audioSource.Play();
+            audioSource.PlayOneShot(laserAudioClip);
         }
     }
 

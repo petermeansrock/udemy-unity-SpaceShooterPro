@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7068910742062358868}
+  - component: {fileID: 5321886642721747835}
   - component: {fileID: 8952688823065988089}
   - component: {fileID: 5069984271570518238}
   - component: {fileID: 5738935044905097677}
@@ -38,6 +39,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5321886642721747835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3660273019694347840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130261658c6964245825919165430db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserPrefab: {fileID: 2345892709034903470, guid: 41ab2b6ae70a34b8199492ff70720214, type: 3}
+  laserAudioClip: {fileID: 8300000, guid: 75676f361bdfeaf41a46623e95df3dbc, type: 3}
 --- !u!114 &8952688823065988089
 MonoBehaviour:
   m_ObjectHideFlags: 0

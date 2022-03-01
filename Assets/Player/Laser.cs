@@ -4,8 +4,14 @@ public class Laser : MonoBehaviour
 {
     [SerializeField]
     private float speed = 8.0f;
+    [SerializeField]
+    private string ownerTag;
+    public string OwnerTag => ownerTag;
+    [SerializeField]
+    private Vector3 direction = Vector3.up;
 
     private float maxY = 8.0f;
+    private float minY = -5.7f;
 
     private void Update()
     {
@@ -14,13 +20,13 @@ public class Laser : MonoBehaviour
 
     private void CalculateMovement()
     {
-        transform.Translate(speed * Time.deltaTime * Vector3.up);
+        transform.Translate(speed * Time.deltaTime * direction);
         ConditionallyDespawn();
     }
 
     private void ConditionallyDespawn()
     {
-        if (transform.position.y > maxY)
+        if (transform.position.y > maxY || transform.position.y < minY)
         {
             Transform parent = transform.parent;
             if (parent != null)
@@ -39,7 +45,11 @@ public class Laser : MonoBehaviour
         {
             case Tag.Enemy:
             case Tag.Asteroid:
-                Destroy(gameObject);
+                // Do not allow lasers to be consumed by the owner
+                if (!other.CompareTag(ownerTag))
+                {
+                    Destroy(gameObject);
+                }
                 break;
         }
     }

@@ -1788,6 +1788,7 @@ GameObject:
   - component: {fileID: 2041227471}
   - component: {fileID: 2041227474}
   - component: {fileID: 2041227469}
+  - component: {fileID: 2041227475}
   - component: {fileID: 2041227470}
   m_Layer: 0
   m_Name: Player
@@ -2089,6 +2090,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  explosionAudioClip: {fileID: 8300000, guid: a885c043fab7e46438bba03ba9dab6bc, type: 3}
+  explosionPrefab: {fileID: 6588693208323478310, guid: e646d2a8390614dd7a1820cd33100fc6, type: 3}
 --- !u!114 &2041227474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2117,6 +2120,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!50 &2041227475
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041227465}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2058635101
 GameObject:
   m_ObjectHideFlags: 0

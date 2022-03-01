@@ -19,7 +19,6 @@ public class EnemyHealth : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         boxCollider = GetComponent<BoxCollider2D>();
-        audioSource.clip = explosionAudioClip;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -30,8 +29,13 @@ public class EnemyHealth : MonoBehaviour
                 DestroySelf();
                 break;
             case Tag.Laser:
-                destroyedByLaserEvent.Invoke(10);
-                DestroySelf();
+                // Only allow lasers owned by other tags to damage the enemy
+                var laser = other.GetComponent<Laser>();
+                if (!gameObject.CompareTag(laser.OwnerTag))
+                {
+                    destroyedByLaserEvent.Invoke(10);
+                    DestroySelf();
+                }
                 break;
         }
     }
@@ -41,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
         isAlive = false;
         boxCollider.enabled = false;
         animator.SetTrigger("OnEnemyDeath");
-        audioSource.Play();
+        audioSource.PlayOneShot(explosionAudioClip);
         Destroy(gameObject, 2.8f);
     }
 }
