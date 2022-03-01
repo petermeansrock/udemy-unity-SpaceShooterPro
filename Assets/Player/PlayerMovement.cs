@@ -15,12 +15,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Coroutine previousSpeedCoroutine;
 
-    private void Start()
-    {
-        // Initialize the starting position
-        transform.position = new Vector3(0, 0, 0);
-    }
-
     private void Update()
     {
         // Translate based on user input
