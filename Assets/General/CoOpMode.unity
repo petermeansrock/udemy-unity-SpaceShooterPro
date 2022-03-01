@@ -835,6 +835,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3695068492543822438, guid: e9b88140dba024f7b922c27d311a7023, type: 3}
+      propertyPath: id
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5067806067070065424, guid: e9b88140dba024f7b922c27d311a7023, type: 3}
       propertyPath: m_Color.b
       value: 0.4764151
