@@ -8,9 +8,16 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (isGameOver && Input.GetKeyDown(KeyCode.R))
+        if (isGameOver)
         {
-            RestartGame();
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                RestartGame();
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ReturnToMainMenu();
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -25,7 +32,11 @@ public class GameManager : MonoBehaviour
 
     private void RestartGame()
     {
-        isGameOver = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void ReturnToMainMenu()
+    {
         SceneManager.LoadScene("MainMenu");
     }
 }
