@@ -722,6 +722,14 @@ PrefabInstance:
       propertyPath: Name
       value: Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 9529ecc3d479da5499993355e6c2cb4f, type: 3}
+      propertyPath: verticalAxisName
+      value: Vertical1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 9529ecc3d479da5499993355e6c2cb4f, type: 3}
+      propertyPath: horizontalAxisName
+      value: Horizontal1
+      objectReference: {fileID: 0}
     - target: {fileID: 11400016, guid: 9529ecc3d479da5499993355e6c2cb4f, type: 3}
       propertyPath: m_Text
       value: FIRE

@@ -13,13 +13,22 @@ public class PlayerMovement : MonoBehaviour
     private float maxX = 11.3f;
     private float minX = -11.3f;
 
+    private string horizontalAxis;
+    private string verticalAxis;
     private Coroutine previousSpeedCoroutine;
+
+    private void Start()
+    {
+        var playerId = GetComponent<PlayerIdentity>().Id;
+        horizontalAxis = $"Horizontal{playerId}";
+        verticalAxis = $"Vertical{playerId}";
+    }
 
     private void Update()
     {
         // Translate based on user input
-        float horizontalInput = CrossPlatformInputManager.GetAxis("Horizontal");
-        float verticalInput = CrossPlatformInputManager.GetAxis("Vertical");
+        float horizontalInput = CrossPlatformInputManager.GetAxis(horizontalAxis);
+        float verticalInput = CrossPlatformInputManager.GetAxis(verticalAxis);
         Vector3 direction = new(horizontalInput, verticalInput, 0);
         transform.Translate(speed * speedBoostFactor * Time.deltaTime * direction);
 

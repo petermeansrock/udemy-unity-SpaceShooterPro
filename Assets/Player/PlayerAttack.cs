@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -16,11 +17,22 @@ public class PlayerAttack : MonoBehaviour
     private float nextAllowedFire = 0.0f;
     private bool isTripleShotActive = false;
 
+    private int id;
+    private KeyCode fireButton;
     private Coroutine previousTripleshotCoroutine;
+
+    private static readonly Dictionary<int, KeyCode> FIRE_CONTROLS = new()
+    {
+        [1] = KeyCode.Space,
+        [2] = KeyCode.Return,
+    };
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
+        id = GetComponent<PlayerIdentity>().Id;
+        fireButton = FIRE_CONTROLS[id];
     }
 
     private void Update()
@@ -46,9 +58,16 @@ public class PlayerAttack : MonoBehaviour
     private bool IsFireButtonPressed()
     {
         #if UNITY_IOS
-            return CrossPlatformInputManager.GetButtonDown("Fire");
+            if (id == 1)
+            {
+                return Input.GetKeyDown(fireButton) || CrossPlatformInputManager.GetButtonDown("Fire");
+            }
+            else
+            {
+                Input.GetKeyDown(fireButton);
+            }
         #else
-            return Input.GetKeyDown(KeyCode.Space);
+            return Input.GetKeyDown(fireButton);
         #endif
     }
 
