@@ -16,14 +16,24 @@ public class UiManager : MonoBehaviour
     private float gameOverFlashRate = 0.5f;
     [SerializeField]
     private GameObject pausePanel;
+    [SerializeField]
+    private Text bestScoreText;
+
+    private int score = 0;
+    private int bestScore;
+
+    private const string BEST_SCORE_PREFERENCE = "BestScore";
 
     private void Start()
     {
         scoreText.text = "Score: 0";
+        bestScore = PlayerPrefs.GetInt(BEST_SCORE_PREFERENCE, 0);
+        bestScoreText.text = $"Best: {bestScore}";
     }
 
     public void UpdateScore(int score)
     {
+        this.score = score;
         scoreText.text = $"Score: {score}";
     }
 
@@ -36,6 +46,11 @@ public class UiManager : MonoBehaviour
     {
         gameOverText.gameObject.SetActive(true);
         StartCoroutine(FlashGameOverTextRoutine());
+
+        if (score > bestScore)
+        {
+            PlayerPrefs.SetInt(BEST_SCORE_PREFERENCE, score);
+        }
     }
 
     private IEnumerator FlashGameOverTextRoutine()
