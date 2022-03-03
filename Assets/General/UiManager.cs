@@ -15,24 +15,10 @@ public class UiManager : MonoBehaviour
     private Text gameOverText;
     [SerializeField]
     private float gameOverFlashRate = 0.5f;
-    [SerializeField]
-    private UnityEvent mainMenuRequestedEvent;
-    [SerializeField]
-    private GameObject pausePanel;
-
-    private bool isPaused = false;
 
     private void Start()
     {
         scoreText.text = "Score: 0";
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P) && !isPaused)
-        {
-            PauseGame();
-        }
     }
 
     public void UpdateScore(int score)
@@ -58,25 +44,5 @@ public class UiManager : MonoBehaviour
             yield return new WaitForSeconds(gameOverFlashRate);
             gameOverText.enabled = !gameOverText.enabled;
         }
-    }
-
-    private void PauseGame()
-    {
-        isPaused = true;
-        Time.timeScale = 0;
-        pausePanel.SetActive(true);
-    }
-
-    public void ResumeGame()
-    {
-        isPaused = false;
-        Time.timeScale = 1;
-        pausePanel.SetActive(false);
-    }
-
-    public void ReturnToMainMenu()
-    {
-        ResumeGame();
-        mainMenuRequestedEvent.Invoke();
     }
 }
