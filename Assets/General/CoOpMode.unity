@@ -1248,6 +1248,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8634360114555533721, guid: df14ae17569154c9d961b6170b8355a9, type: 3}
+      propertyPath: mainMenuRequestedEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634360114555533721, guid: df14ae17569154c9d961b6170b8355a9, type: 3}
+      propertyPath: mainMenuRequestedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634360114555533721, guid: df14ae17569154c9d961b6170b8355a9, type: 3}
+      propertyPath: mainMenuRequestedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 349488856}
+    - target: {fileID: 8634360114555533721, guid: df14ae17569154c9d961b6170b8355a9, type: 3}
+      propertyPath: mainMenuRequestedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634360114555533721, guid: df14ae17569154c9d961b6170b8355a9, type: 3}
+      propertyPath: mainMenuRequestedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634360114555533721, guid: df14ae17569154c9d961b6170b8355a9, type: 3}
+      propertyPath: mainMenuRequestedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634360114555533721, guid: df14ae17569154c9d961b6170b8355a9, type: 3}
+      propertyPath: mainMenuRequestedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8634360114555533726, guid: df14ae17569154c9d961b6170b8355a9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
