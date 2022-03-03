@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -7,6 +8,10 @@ public class GameManager : MonoBehaviour
     private bool isGameOver;
     [SerializeField]
     private GameObject pausePanel;
+    [SerializeField]
+    private UnityEvent gamePausedEvent;
+    [SerializeField]
+    private UnityEvent gameResumedEvent;
 
     private bool isPaused = false;
 
@@ -56,13 +61,13 @@ public class GameManager : MonoBehaviour
     {
         isPaused = true;
         Time.timeScale = 0;
-        pausePanel.SetActive(true);
+        gamePausedEvent.Invoke();
     }
 
     public void ResumeGame()
     {
         isPaused = false;
         Time.timeScale = 1;
-        pausePanel.SetActive(false);
+        gameResumedEvent.Invoke();
     }
 }

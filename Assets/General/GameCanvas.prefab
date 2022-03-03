@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8286367653640116953}
   - component: {fileID: 6263784233160024760}
+  - component: {fileID: 544831890925243589}
   m_Layer: 5
   m_Name: Pause Menu Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8286367653640116953
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 487}
   m_SizeDelta: {x: 500, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6263784233160024760
@@ -48,6 +49,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1062889539296432159}
   m_CullTransparentMesh: 1
+--- !u!95 &544831890925243589
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062889539296432159}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97c9ca77d0b6a4a3fa735d646fef3d92, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2470916757341510054
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,9 +701,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9fe6f40efddf0b64fb68a3382b14a4db, type: 3}
   gameOverText: {fileID: 8634360115379032244}
   gameOverFlashRate: 0.25
-  mainMenuRequestedEvent:
-    m_PersistentCalls:
-      m_Calls: []
   pausePanel: {fileID: 1062889539296432159}
 --- !u!1 &8634360114907336710
 GameObject:

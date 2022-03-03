@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
@@ -15,6 +14,8 @@ public class UiManager : MonoBehaviour
     private Text gameOverText;
     [SerializeField]
     private float gameOverFlashRate = 0.5f;
+    [SerializeField]
+    private GameObject pausePanel;
 
     private void Start()
     {
@@ -44,5 +45,15 @@ public class UiManager : MonoBehaviour
             yield return new WaitForSeconds(gameOverFlashRate);
             gameOverText.enabled = !gameOverText.enabled;
         }
+    }
+
+    public void ShowPauseMenu()
+    {
+        pausePanel.SetActive(true);
+    }
+
+    public void HidePauseMenu()
+    {
+        pausePanel.SetActive(false);
     }
 }
